@@ -1,0 +1,28 @@
+﻿@page "/films"
+
+@using CinemaBlazor.Client.Services
+@using CinemaBlazor.Shared.Models
+@inject IFilmService IFilmService
+
+<h3>Films</h3>
+
+@if(films == null){
+    <p><em>Loading....</em></p>
+}
+else
+{
+    @foreach (Film film in films)
+    {
+            <a href="@film.TrailerUrl"><img src="@film.ImageUrl"></a>
+    }
+}
+
+@code {
+    private IEnumerable<Film>? films;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        films = await IFilmService.GetFilms();
+    }
+}

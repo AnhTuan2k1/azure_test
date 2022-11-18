@@ -1,0 +1,84 @@
+﻿<nav class="navbar navbar-dark bg-dark ps-5 pt-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+            <img src="https://cdn-icons-png.flaticon.com/512/1655/1655698.png" alt="" width="52" height="52" class="d-inline-block align-text-bottom">
+            <strong>Cinema Blazor</strong>
+    </a>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Tìm kiếm diễn viên, phim..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark  ps-5">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">CinemaBlazor</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                @*<li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Mua vé</a>
+                </li>*@
+                <li class="nav-item me-2">
+                    <a class="nav-link" href="/muave">Mua vé</a>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Phim
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Góc điện ảnh
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/filmgenres">Thể loại phim</a></li>
+                        <li><a class="dropdown-item" href="#">Diễn viên</a></li>
+                        @*<li><hr class="dropdown-divider"></li>*@
+                        <li><a class="dropdown-item" href="#">Đạo diễn</a></li>
+                        <li><a class="dropdown-item" href="#">Bình luận phim</a></li>
+                        <li><a class="dropdown-item" href="#">Góc diện ảnh</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown me-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sự kiện
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Ưu đãi</a></li>
+                        <li><a class="dropdown-item" href="#">Phim hay tháng</a></li>
+                        @*<li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>*@
+                    </ul>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">Rạp/Giá vé</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">Hỗ trợ</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link" href="#">Thành viên</a>
+                </li>
+@*                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">disabled</a>
+                </li>*@
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+@code {
+    private string query = String.Empty;
+
+
+}

@@ -1,0 +1,90 @@
+﻿@page
+@model CinemaBlazor.Server.Pages.film.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].OpenningDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].TrailerUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Nation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Directior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].Cast)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Film[0].FilmGenre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Film) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpenningDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrailerUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Directior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cast)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilmGenre.Name)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,68 @@
+﻿@page
+@model CinemaBlazor.Server.Pages.film.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Film</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Film.FilmGenreId" class="control-label"></label>
+                <select asp-for="Film.FilmGenreId" class ="form-control" asp-items="ViewBag.FilmGenreId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.Length" class="control-label"></label>
+                <input asp-for="Film.Length" class="form-control" />
+                <span asp-validation-for="Film.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.OpenningDay" class="control-label"></label>
+                <input asp-for="Film.OpenningDay" class="form-control" />
+                <span asp-validation-for="Film.OpenningDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.ImageUrl" class="control-label"></label>
+                <input asp-for="Film.ImageUrl" class="form-control" />
+                <span asp-validation-for="Film.ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.TrailerUrl" class="control-label"></label>
+                <input asp-for="Film.TrailerUrl" class="form-control" />
+                <span asp-validation-for="Film.TrailerUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.Nation" class="control-label"></label>
+                <input asp-for="Film.Nation" class="form-control" />
+                <span asp-validation-for="Film.Nation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.Directior" class="control-label"></label>
+                <input asp-for="Film.Directior" class="form-control" />
+                <span asp-validation-for="Film.Directior" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Film.Cast" class="control-label"></label>
+                <input asp-for="Film.Cast" class="form-control" />
+                <span asp-validation-for="Film.Cast" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,29 @@
+﻿@page "/filmgenres"
+
+@using CinemaBlazor.Client.Services
+@using CinemaBlazor.Shared.Models
+@inject IFilmGenreService IFilmGenreService
+
+<h3>FilmGenres</h3>
+
+@if (filmGenres == null)
+{
+    <p><em>Loading....</em></p>
+}
+else
+{
+    @foreach (FilmGenre filmGenres in filmGenres)
+    {
+        <div>@filmGenres.Name</div>
+    }
+}
+
+@code {
+    private IEnumerable<FilmGenre>? filmGenres;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        filmGenres = await IFilmGenreService.GetFilmGenres();
+    }
+}
